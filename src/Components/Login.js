@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import authCon from '../store/authCon';
 
+
 function Login() {
   const authCtx = useContext(authCon);
 
@@ -9,9 +10,7 @@ function Login() {
   const [password, setPassword] = useState('');
   const [register, setRegister] = useState(true);
 
-const bod = {
-    username, password
-}
+
 //   function handleUsernameChange(event) {
 //     setUsername(event.target.value);
 //   }
@@ -23,6 +22,9 @@ const bod = {
   function handleSubmit(event) {
     event.preventDefault();
   
+    const bod = {
+        username, password
+    }
 
   axios.post(register ? `/register` : `login`, bod)
   .then(({ data }) => {
@@ -36,12 +38,13 @@ const bod = {
 }
 
   return (
-    <main>
-    <h1>Sign in or Create an Account!</h1>
+    <main className='main-con'>
+    
     <form className= "login-form" onSubmit={handleSubmit}>
+    <h2>Sign in or Create an Account!</h2>
       <label>
         Username:
-        <input placeholder='username' 
+        <input  
         type="text" value={username} 
         onChange={(e) => setUsername(e.target.value)}
         className="login-input"/>
@@ -51,7 +54,7 @@ const bod = {
         Password:
         <input type="password"
         className="login-input" 
-        placeholder='password'
+        
         value={password} 
         onChange={(e) => setPassword(e.target.value)} />
       </label>
