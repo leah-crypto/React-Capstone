@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,47 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+/* header*/
+
+.header {
+	height: 80px;
+	background-color: #7E87D6;
+	padding: 0 10px;
+}
+
+/* .main-nav{
+
+} */
+
+/*form*/
+
+.form {
+  font-family: JetBrains Mono;
+  border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	margin: 25px;
+}
+
+.form-input {
+  background-color: white;
+ 
+}
+/*auth*/
+
+.auth-form {
+  width: 420px;
+  height: 200px;
+  background-color: #BABFE5;
+  border-radius: 8px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
+.auth-input {
+	width: 200px;
 }
