@@ -38,7 +38,7 @@ module.exports = {
         }
     },
 
-    deletePost: async (req, res) => {
+    deleteList: async (req, res) => {
         try{
             const {id} = req.params
             await list.destroy({where: {id: +id}})

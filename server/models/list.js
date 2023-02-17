@@ -10,7 +10,7 @@ module.exports = {
             allowNull: false,
             primaryKey: true
         },
-        details: DataType.VARCHAR(50),
-        when_created: DataTypes.TIMESTAMP
+        details: DataTypes.STRING,
+        when_created: DataTypes.DATE
     })
 }

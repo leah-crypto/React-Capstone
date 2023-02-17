@@ -26,9 +26,7 @@ const Header = () => {
             <li>
               <Link to="/">Home</Link>
             </li>
-            <li>
-              <Link to="/planets">Planet Info</Link>
-            </li>
+           
             <li>
               <Link to="form">Add Post</Link>
             </li>
@@ -46,6 +44,12 @@ const Header = () => {
             <li>
               <Link to="/login">Login or Sign Up</Link>
             </li>
+             <li>
+              <Link to="/planets">Planet Info</Link>
+            </li>
+            {/* <li>
+              <Link to="/photo">Photo</Link>
+            </li> */}
           </ul>
         )}
       </nav>

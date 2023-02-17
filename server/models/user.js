@@ -10,7 +10,7 @@ module.exports = {
             allowNull: false,
             primaryKey: true
         },
-        uername: DataTypes.VARCHAR(50), //cant remeber if we definethis here
-        hashedPass: DataTypes.VARCHAR(50)
+        username: DataTypes.STRING, 
+        hashedPass: DataTypes.STRING
     })
 }

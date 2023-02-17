@@ -2,14 +2,14 @@ require("dotenv").config();
 const { sequelize } = require("./utli/database");
 const { user } = require("./models/user");
 const { list } = require("./models/list");
-const { planet } = require("./models/planet");
+// const { planet } = require("./models/planet");
 const express = require("express");
 const cors = require("cors");
 
 //relationships
 user.hasMany(list);
 list.belongsTo(user);
-list.belongsTo(planet);
+// list.belongsTo(planet);
 
 //creating and using app
 const app = express();
