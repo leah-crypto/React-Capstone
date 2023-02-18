@@ -65,7 +65,7 @@ function Login() {
         <br />
 
         <button className="login-btn">
-          {register ? "Sign Up" : "Login"}
+          {/* {register ? "Sign Up" : "Login"} */}
           Login
         </button>
         <button onClick={() => setRegister(!register)} className="login-btn">

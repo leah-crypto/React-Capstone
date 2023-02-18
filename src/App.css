@@ -114,6 +114,7 @@
   height: auto;
   background-size: cover;
   background-position: center;
+  background-size: cover;
 }
 
 /* .image-overlay{
@@ -150,6 +151,7 @@
   width: 185px;
   height: 171px;
   max-width: 50%;
+ 
 }
 
 .planets-cont {
