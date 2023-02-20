@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import axios from "axios";
-import Photo from "./Photo";
+
+const API_URL = "https://planets-by-api-ninjas.p.rapidapi.com/v1/planets";
 
 const Planets = () => {
   const [searchPlanet, setSearchPlanet] = useState("");
@@ -8,22 +9,36 @@ const Planets = () => {
 
   const handleSearch = async (event) => {
     event.preventDefault();
-
-    const res = await fetch("https://api.api-ninjas.com/v1/planets?", {
-      method: "GET",
+    const options = {
+      params: { name: searchPlanet },
       headers: {
-        "x-rapidapi-host": "planets-by-api-ninjas.p.rapidapi.com",
-        "x-rapidapi-key":
-          "api_key=36db981753mshf7779b00ac093ddp12783fjsn6c79b9fff60c",
+        "X-RapidAPI-Key": "36db981753mshf7779b00ac093ddp12783fjsn6c79b9fff60c",
+        "X-RapidAPI-Host": "planets-by-api-ninjas.p.rapidapi.com",
       },
-    });
+    };
 
-    const data = await res.json();
-    setPlanetResults(data);
+    try {
+      const res = await axios.get(API_URL, options);
+      console.log(res.data);
+      const { name, mass, radius, temperature, distance_light_year } = res.data;
+      const planetId = localStorage.getItem("planetId");
+      const userId = localStorage.getItem("userId");
+
+      // await axios.post("/api/planets", {
+      //   userId,
+      //   name,
+      //   mass,
+      //   radius,
+      //   temperature,
+      //   distance_light_year
+
+      // });
+    } catch (err) {
+      console.log(err);
+    }
   };
   return (
     <div className="planets-cont">
-      <Photo />
       <form className="planets-form" onSubmit={handleSearch}>
         <label>
           Planet
@@ -35,21 +50,21 @@ const Planets = () => {
           />
         </label>
         <br></br>
+        <label>Name:</label>
         <br></br>
-        <label>Mass</label>
+        <label>Radius:</label>
         <br></br>
+        <label>Mass:</label>
         <br></br>
-        <label>Temp</label>
+        <label>Temp:</label>
         <br></br>
-        <br></br>
-        <label>Light Years Away</label>
-        <br></br>
-        <br></br>
-        <label>Radius</label>
+        <label>Light Years Away:</label>
         <br></br>
         <br></br>
-        <button>Search</button>
-        <button type='submit'>Save</button>
+        <button className="planet-btn">Search</button>
+        <button type="submit" className="planet-btn">
+          Save
+        </button>
       </form>
       <ul>
         {planetResults.map((planet) => (
@@ -59,5 +74,7 @@ const Planets = () => {
     </div>
   );
 };
+
+//axios call should be made on the search button
 
 export default Planets;

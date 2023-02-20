@@ -1,8 +1,14 @@
 import React from 'react'
+import Photo from './Photo'
+
 
 const Landing = () => {
   return (
-    <div>Landing</div>
+    <div>
+      <Photo/>
+      Landing
+      
+    </div>
   )
 }
 
