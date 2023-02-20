@@ -2,6 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import authCon from "../store/authCon";
 import { useContext, useState } from "react";
 import solar from "../assets/solar-system.jpg";
+import Overlay from "./Overlay";
 
 const Header = () => {
   const authCtx = useContext(authCon);
@@ -15,48 +16,46 @@ const Header = () => {
 
   return (
     <div>
-    <header className="header flex-row">
-      <div className="flex-row">
-        
-        <h2>User Login</h2>
-      </div>
-      <nav>
-        {authCtx.token ? (
-          <ul className="main-nav">
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-           
-            <li>
-              <Link to="form">Add Post</Link>
-            </li>
-            <li>
-              <button className="logout-btn" onClick={() => authCtx.login()}>
-                Login
-              </button>
-            </li>
-          </ul>
-        ) : (
-          <ul className="main-nav">
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/login">Login or Sign Up</Link>
-            </li>
-             <li>
-              <Link to="/planets">Planet Info</Link>
-            </li>
-            {/* <li>
+      <header className="header flex-row">
+        <div className="flex-row"></div>
+        <nav>
+          {authCtx.token ? (
+            <ul className="main-nav">
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+
+              <li>
+                <Link to="form">Add Post</Link>
+              </li>
+              <li>
+                <button className="logout-btn" onClick={() => authCtx.login()}>
+                  Login
+                </button>
+              </li>
+            </ul>
+          ) : (
+            <ul className="main-nav">
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/login">Login or Sign Up</Link>
+              </li>
+              <li>
+                <Link to="/planets">Planet Info</Link>
+              </li>
+              {/* <li>
               <Link to="/photo">Photo</Link>
             </li> */}
-          </ul>
-        )}
-      </nav>
-    </header>
-    <div className="image-overlay">
+            </ul>
+          )}
+        </nav>
+        <Overlay />
+      </header>
+      {/* <div className="image-overlay">
     <img src={solar} className="pic-styles"/>
-    </div>
+    </div> */}
     </div>
   );
 };
