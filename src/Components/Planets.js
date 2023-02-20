@@ -20,19 +20,19 @@ const Planets = () => {
     try {
       const res = await axios.get(API_URL, options);
       console.log(res.data);
-      const { name, mass, radius, temperature, distance_light_year } = res.data;
-      const planetId = localStorage.getItem("planetId");
-      const userId = localStorage.getItem("userId");
+      // const { name, mass, radius, temperature, distance_light_year } = res.data;
+      // const planetId = localStorage.getItem("planetId");
+      // const userId = localStorage.getItem("userId");
 
-      // await axios.post("/api/planets", {
-      //   userId,
-      //   name,
-      //   mass,
-      //   radius,
-      //   temperature,
-      //   distance_light_year
-
-      // });
+      const planetResults = res.data.map((planet) => ({
+        id: planet.id,
+        name: planet.name,
+        radius: planet.radius,
+        mass: planet.mass,
+        temperature: planet.temperature,
+        distance_light_year: planet.distance_light_year
+      }));
+    setPlanetResults(planetResults)
     } catch (err) {
       console.log(err);
     }
@@ -49,32 +49,26 @@ const Planets = () => {
             className="planet-searchbar"
           />
         </label>
-        <br></br>
-        <label>Name:</label>
-        <br></br>
-        <label>Radius:</label>
-        <br></br>
-        <label>Mass:</label>
-        <br></br>
-        <label>Temp:</label>
-        <br></br>
-        <label>Light Years Away:</label>
-        <br></br>
-        <br></br>
+           <ul>
+        {planetResults.map((planet) => (
+          <li key={planet.id}>
+            <label>Name:</label>{planet.name}<br/>
+            <label>Raduis:</label>{planet.radius}<br/>
+            <label>Mass:</label>{planet.mass}<br/>
+            <label>Temperature:</label>{planet.temperature}<br/>
+            <label>Light Years Away:</label>{planet.distance_light_year}<br/>
+          
+          </li>
+        ))}
+      </ul>
         <button className="planet-btn">Search</button>
         <button type="submit" className="planet-btn">
           Save
         </button>
       </form>
-      <ul>
-        {planetResults.map((planet) => (
-          <li key={planet.id}>{planet.name}</li>
-        ))}
-      </ul>
+   
     </div>
   );
 };
-
-//axios call should be made on the search button
 
 export default Planets;
