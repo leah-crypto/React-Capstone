@@ -1,6 +1,5 @@
 import React from 'react';
-// import './App.css';
-import solar from "../assets/solar-system.jpg";
+import solar from "../assets/universe.jpg";
 
 
 // image = 
@@ -8,13 +7,13 @@ import solar from "../assets/solar-system.jpg";
 function Overlay() {
   return (
     <div className="image-overlay">
-       <h2 className='overlay-heading'>Tracking the Universe</h2>
+       <h1 className='overlay-heading'>Tracking the Universe</h1>
+       <h3 className='overlay-heading2'>A guide to space and space like things...</h3>
 
-      <div className="overlay"
-      style={{ position: 'absolute'}}>
-       
-        </div>
+      <div className="overlay">
       <img src={solar} className="pic-styles"/>
+      </div>
+     
       
     </div>
   );

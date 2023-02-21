@@ -1,15 +1,13 @@
-import React from 'react'
-import Photo from './Photo'
-
+import React from "react";
+import Photo from "./Photo";
 
 const Landing = () => {
   return (
     <div>
-      <Photo/>
-      Landing
-      
+      <Photo />
+      <h1>Welcome!</h1>
     </div>
-  )
-}
+  );
+};
 
-export default Landing
+export default Landing;

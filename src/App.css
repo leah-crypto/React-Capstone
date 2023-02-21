@@ -1,49 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito&family=Space+Grotesk:wght@500&display=swap");
-/*.App {
-  text-align: center;
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
-
-/* .main-nav{
-
-} */
-
-/*form*/
-
-/* .form {
-  font-family: JetBrains Mono;
-  border-radius: 5px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-evenly;
-	align-items: center;
-	margin: 25px;
-}
-
-.form-input {
-  background-color: white;
-  
-} */
 * {
   /* background-color: #E2E9F5; */
   font-family: "Nunito", sans-serif;
@@ -96,9 +52,9 @@
 /*header*/
 
 .header {
-  height: 300px;
-  background-color: #7e87d6;
-  padding: 0 10px;
+  height: 200px;
+  /* background-color: #7e87d6; */
+ padding: 0;
 }
 
 .flex-row {
@@ -117,6 +73,7 @@
   background-size: cover;
   background-position: center;
   background-size: cover;
+  
 }
 
 /*footer*/
@@ -126,18 +83,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  /* padding: 0;
+  margin: 0; */
 }
 
 /*planets*/
 
 .planet-form {
-  /* width: 420px;
-  height: 200px; */
-  /* background-color: #babfe5; */
-  /* border-radius: 8px;
-  padding-top: 30px;
-  padding-bottom: 20px;
-  flex: 1; */
   width: 420px;
   height: 200px;
   background-color: #babfe5;
@@ -147,20 +99,24 @@
 }
 
 .spacePhoto {
-  width: 185px;
-  height: 171px;
+  padding: 60px;
+  width: 385px;
+  height: 371px;
   max-width: 50%;
 }
 
 .planets-cont {
+  width: 420px;
+  height: 350px;
+  background-color: #babfe5;
+  border-radius: 8px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  padding-top: 25px;
   display: flex;
-  flex-direction: row;
-  padding: 50px;
+  flex-direction: column;
+  align-items: center;
   justify-content: space-between;
-  border-radius: 5px;
-  /* background-color: #BABFE5; */
-  /* color: #babfe5; */
-  padding: 20px;
 }
 
 .planet-searchbar {
@@ -185,15 +141,20 @@ label {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  float: right;
+  float: center;
   margin-right: 20px;
 }
+
+/*was float :right*/
+
 
 /*body*/
 
 body {
   background-color: #e2e9f5;
 }
+
+/*image overlay*/
 
 .image-overlay {
   position: relative;
@@ -208,6 +169,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  
 }
 
 .image-overlay .overlay {
@@ -229,6 +191,15 @@ body {
   color: black;
   z-index: 1;
   position: absolute;
-  left: 250px;
-  padding-top: 150px;
+  left: 550px;
+  padding-bottom: 50px;
+  padding-top: 50px;
+}
+
+.overlay-heading2{
+  color: black;
+  z-index: 1;
+  position: absolute;
+  bottom: 40px;
+  right: 537px;
 }

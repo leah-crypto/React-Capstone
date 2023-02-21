@@ -1,5 +1,7 @@
 import React, { useState, useContext } from "react";
 import axios from "axios";
+import PlanetCard from "./PlanetCard";
+
 
 const API_URL = "https://planets-by-api-ninjas.p.rapidapi.com/v1/planets";
 
@@ -37,6 +39,11 @@ const Planets = () => {
       console.log(err);
     }
   };
+
+const handleSavePlanet = () =>{
+
+}
+
   return (
     <div className="planets-cont">
       <form className="planets-form" onSubmit={handleSearch}>
@@ -62,11 +69,12 @@ const Planets = () => {
         ))}
       </ul>
         <button className="planet-btn">Search</button>
-        <button type="submit" className="planet-btn">
+        <button type="submit" className="planet-btn" onClick={handleSavePlanet}>
           Save
         </button>
       </form>
    
+      <PlanetCard/>
     </div>
   );
 };
