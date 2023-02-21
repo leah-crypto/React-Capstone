@@ -64,11 +64,15 @@ function Login() {
         </label>
         <br />
 
-        <button className="login-btn">
+        <button className="planet-btn" id="login-btn">
           {/* {register ? "Sign Up" : "Login"} */}
           Login
         </button>
-        <button onClick={() => setRegister(!register)} className="login-btn">
+        <button
+          onClick={() => setRegister(!register)}
+          className="planet-btn"
+          id="sign-in-btn"
+        >
           Sign Up
         </button>
       </form>

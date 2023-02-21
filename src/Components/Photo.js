@@ -19,7 +19,7 @@ const Photo = () => {
   return (
     <div>
       <img src={photo.url} alt={photo.title} className="spacePhoto"></img>
-      <h2>{photo.title}</h2>
+      <h2 id="space-photo-title">{photo.title}</h2>
     </div>
   );
 };
