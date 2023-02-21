@@ -26,9 +26,9 @@ function Login() {
       password,
     };
 
-    // const baseUrl =
+    const baseUrl = "http://localhost:4000"
     axios
-      .post(register ? `/register` : `login`, bod)
+      .post(register ? `${baseUrl}/register` : `${baseUrl}/login`, bod)
       .then(({ data }) => {
         console.log("auth confrimed", data);
         authCtx.login(data.token, data.exp, data.userId);
@@ -79,6 +79,6 @@ function Login() {
     </main>
   );
 }
-//may to to change button parts more
+
 
 export default Login;

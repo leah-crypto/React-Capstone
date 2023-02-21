@@ -10,7 +10,25 @@ module.exports = {
             allowNull: false,
             primaryKey: true
         },
-        details: DataTypes.STRING,
-        when_created: DataTypes.DATE
+        name: {
+            type: DataTypes.STRING,
+            allowNull: false
+          },
+          mass: {
+            type: DataTypes.FLOAT,
+            allowNull: false
+          },
+          radius: {
+            type: DataTypes.FLOAT,
+            allowNull: false
+          },
+          temperature: {
+            type: DataTypes.FLOAT,
+            allowNull: false
+          },
+          distanceLightYear: {
+            type: DataTypes.FLOAT,
+            allowNull: false
+          }
     })
 }

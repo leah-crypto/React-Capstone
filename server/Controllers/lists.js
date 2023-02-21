@@ -9,12 +9,8 @@ module.exports = {
             const {userId} = req.params
             console.log(req.params)
             const lists = await list.findAll({
-                where: {userId: userId},
-                include: [{
-                    model: user,
-                    required: true,
-                    attributes: ['username']
-                }]
+                where: {userUserId: +userId}
+                
             })
             res.status(200).send(lists)
         }catch (error){
@@ -23,12 +19,14 @@ module.exports = {
             res.sendStatus(400)
         }
     },
-//come back to this part for sure after figuring out data
+
     addList: async(req, res) => {
         try{
             console.log("add list")
-            const {listId, planetId, userId, details, whenCreated} = req.body
-            await list.create({details, userId, listId, planetId, whenCreated})
+            const {name, mass, radius, temperature, distance_light_year, userId } = req.body //can use : or AS
+            console.log(userId, req.body)
+            await list.create({name, mass, radius, temperature, distanceLightYear: distance_light_year, userId})
+            console.log(typeof mass)
             res.sendStatus(200)
 
         }catch(error){

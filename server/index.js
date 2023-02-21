@@ -42,7 +42,6 @@ app.delete("/lists/:id", isAuthenticated, deleteList);
 //listening for server and database and sending response or error
 
 sequelize.sync(
-
 ).then(() => {
     app.listen(SERVER_PORT, () =>
         console.log(`The database is sucessful and server running on on ${SERVER_PORT}`)
