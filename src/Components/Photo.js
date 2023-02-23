@@ -17,9 +17,10 @@ const Photo = () => {
   }, []);
 
   return (
-    <div>
+    <div className="photo-con">
+      <h2 id="space-photo-title">NASAs Photo of the Day</h2>
       <img src={photo.url} alt={photo.title} className="spacePhoto"></img>
-      <h2 id="space-photo-title">{photo.title}</h2>
+      <h2 id="space-photo-title2">{photo.title}</h2>
     </div>
   );
 };

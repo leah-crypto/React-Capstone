@@ -25,7 +25,7 @@ module.exports = {
             console.log("add list")
             const {name, mass, radius, temperature, distance_light_year, userId } = req.body //can use : or AS
             console.log(userId, req.body)
-            await list.create({name, mass, radius, temperature, distanceLightYear: distance_light_year, userId})
+            await list.create({name, mass, radius, temperature, distanceLightYear: distance_light_year, userUserId: userId})
             console.log(typeof mass)
             res.sendStatus(200)
 

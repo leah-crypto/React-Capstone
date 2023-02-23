@@ -1,9 +1,10 @@
 import React from "react";
-// import Planets from "./Planets"
 
-const PlanetCard = ({ planet, handleSavePlanet }) => {
+
+const PlanetCard = ({ planet }) => {
   return (
-    <div>
+    <div className="planetCardCon">
+      <div className="planetCardRes">
       <ul key={planet.id}>
         <li>
           {" "}
@@ -32,13 +33,14 @@ const PlanetCard = ({ planet, handleSavePlanet }) => {
         </li>
       </ul>
 
-      <button
+      {/* <button
         type="submit"
         className="planet-btn"
         onClick={() => handleSavePlanet(planet)}
       >
         Save
-      </button>
+      </button> */}
+      </div>
     </div>
   );
 };

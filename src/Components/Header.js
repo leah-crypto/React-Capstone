@@ -26,7 +26,7 @@ const Header = () => {
               </li>
 
               <li>
-                <Link to="form">Add Post</Link>
+                <Link to="/planets">Add Planet</Link>
               </li>
               <li>
                 <button className="logout-btn" onClick={() => authCtx.login()}>
@@ -45,9 +45,6 @@ const Header = () => {
               <li>
                 <Link to="/planets">Planet Info</Link>
               </li>
-              {/* <li>
-              <Link to="/photo">Photo</Link>
-            </li> */}
             </ul>
           )}
         </nav>

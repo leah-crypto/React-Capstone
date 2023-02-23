@@ -9,11 +9,9 @@ const Planets = () => {
   const [searchPlanet, setSearchPlanet] = useState("");
   const [planetResults, setPlanetResults] = useState([]);
   const [userPlanets, setUserPlanets] = useState([]);
+
   const JWTToken = localStorage.getItem("token");
   const userId = localStorage.getItem("userId");
-  // `${base_URL}/lists`,
-  // userPlanets(req.body());
-  // userPlanets.body =
 
   useEffect(() => {
     axios
@@ -25,10 +23,10 @@ const Planets = () => {
       .catch((error) => {
         console.log(error);
       });
+    handleSearch();
   }, []);
 
-  const handleSearch = async (event) => {
-    event.preventDefault();
+  const handleSearch = () => {
     const options = {
       params: { name: searchPlanet },
       headers: {
@@ -37,20 +35,18 @@ const Planets = () => {
       },
     };
 
-    try {
-      const res = await axios.get(API_URL, options);
-      // console.log(res.data);
-      // const { name, mass, radius, temperature, distance_light_year } = res.data;
-      // const planetId = localStorage.getItem("planetId");
+    console.log("in try before axios", searchPlanet);
 
-      const planetRes = [...res.data];
-
-      // console.log(planetRes);
-
-      setPlanetResults(planetRes);
-    } catch (err) {
-      console.log(err);
-    }
+    axios
+      .get(API_URL, options)
+      .then((res) => res.data)
+      .then((res) => {
+        setPlanetResults(...res);
+        console.log(planetResults);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   const handleSavePlanet = ({
@@ -68,7 +64,7 @@ const Planets = () => {
       temperature,
       userId: +userId,
     };
-
+    // console.log(body);
     axios
       .post(`${base_URL}/lists`, body, {
         headers: {
@@ -80,18 +76,18 @@ const Planets = () => {
           alert("itemSaved");
         }
       })
-      .catch((err) => {
-        console.log(err);
+      .catch((error) => {
+        console.log(error);
       });
   };
 
-  const planetSearch = planetResults.map((planet) => (
-    <PlanetCard handleSavePlanet={handleSavePlanet} planet={planet} />
+  const planetSearch = userPlanets.map((planet, index) => (
+    <PlanetCard planet={planet} key={index} />
   ));
-
+  // console.log(planetSearch)
   return (
     <div className="planets-cont">
-      <form className="planets-form" onSubmit={handleSearch}>
+      <div className="planets-form">
         <label>
           Planet
           <input
@@ -101,10 +97,28 @@ const Planets = () => {
             className="planet-searchbar"
           />
         </label>
-
-        {planetResults && planetSearch}
-        <button className="planet-btn">Search</button>
-      </form>
+        {/* {planetResults} */}
+        <button className="planet-btn" onClick={handleSearch}>
+          Search
+        </button>
+        {!Array.isArray(planetResults) && (
+          <div>
+            <p>Name: {planetResults.name}</p>
+            <p>Mass: {planetResults.mass}</p>
+            <p>Raduis: {planetResults.radius}</p>
+            <p>Temperature: {planetResults.temperature}</p>
+            <p>Light Years Away: {planetResults.distance_light_year}</p>
+            <button
+              type="submit"
+              className="planet-btn"
+              onClick={() => handleSavePlanet(planetResults)}
+            >
+              Save
+            </button>
+          </div>
+        )}
+      </div>
+      {planetSearch}
     </div>
   );
 };

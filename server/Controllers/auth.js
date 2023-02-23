@@ -30,10 +30,11 @@ module.exports = {
         const newUser = await user.create({ username, hashedPass: hash });
         const token = createToken(
           newUser.dataValues.username,
-          newUser.dataValues.id
+          newUser.dataValues.user_id
         );
         console.log("token", token);
         const exp = Date.now() + 1000 * 60 * 60 * 48;
+        console.log("New User", newUser);
         res.status(200).send({
           username: newUser.dataValues.username,
           userId: newUser.dataValues.user_id,
@@ -61,12 +62,13 @@ module.exports = {
         if (isAuthenticated) {
           const token = createToken(
             foundUser.dataValues.username,
-            foundUser.dataValues.id
+            foundUser.dataValues.user_id
           );
           const exp = Date.now() + 1000 * 60 * 60 * 48;
+          console.log("Found user", foundUser)
           res.status(200).send({
             username: foundUser.dataValues.username,
-            userId: foundUser.dataValues.id,
+            userId: foundUser.dataValues.user_id,
             token,
             exp,
           });

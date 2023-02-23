@@ -10,7 +10,7 @@
 
 .login-form {
   width: 420px;
-  height: 200px;
+  height: 250px;
   background-color: #babfe5;
   border-radius: 8px;
   padding-top: 30px;
@@ -20,7 +20,6 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
- 
 }
 
 .login-input {
@@ -36,18 +35,20 @@
   padding-bottom: 300px;
 }
 
-/* #login-btn {
-  margin-left: 90px;
+#login-btn {
+  margin-left: -90px;
   display: flex;
   flex-direction: row-reverse;
+  margin-top: -30px;
 }
 
 #sign-in-btn{
-  margin-left: 100px;
+  margin-left: 200px;
   display: flex;
   flex-direction: row-reverse;
-} */
-/*header*/
+  margin-top: -45px;
+}
+/*header */
 
 .header {
   height: 200px;
@@ -82,6 +83,7 @@
   align-items: center;
   /* padding: 0;
   margin: 0; */
+  height: 110px;
 }
 
 /*planets*/
@@ -197,7 +199,7 @@ body {
   z-index: 1;
   position: absolute;
   bottom: 40px;
-  right: 537px;
+  left: 540px;
 }
 
 /*landing*/
@@ -222,6 +224,46 @@ body {
 }
 
 #space-photo-title {
-  margin-bottom: 6%;
-  padding-left: 150px;
+  margin-top: 6%;
+  padding-left: 250px;
+}
+
+#space-photo-title2 {
+  margin-bottom: 3%;
+  padding-left: 250px;
+}
+
+.photo-con {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+/*planetsCard*/
+
+.planetCardCon {
+  width: 320px;
+  height: 250px;
+  background-color: #babfe5;
+  border-radius: 8px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  padding-top: 25px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 150px;
+  margin-left: 950px;
+}
+
+/* .planetCardRes{
+  width: 300px;
+  height: 300px;
+} */
+
+ul {
+  list-style-type: none;
 }
