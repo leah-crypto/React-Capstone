@@ -117,6 +117,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  margin-left: 800px;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 
 .planet-searchbar {
@@ -142,10 +145,15 @@ label {
   border-radius: 4px;
   cursor: pointer;
   float: center;
-  margin-right: 20px;
+  margin-right: 10px;
+  
 }
 
-/*was float :right*/
+.planet-planet-card{
+  display: flex;
+  
+}
+
 
 /*body*/
 
@@ -243,27 +251,93 @@ body {
 /*planetsCard*/
 
 .planetCardCon {
-  width: 320px;
-  height: 250px;
+  /* width: 320px;
+  height: 250px; */
+  
+  /* border-radius: 8px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  padding-top: 25px; */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
+  /* flex-direction: row;
+  flex-wrap: wrap; */
+  /* align-items: center;
+  justify-content: center;
+  margin-top: 150px;
+  margin-left: 950px; */
+  /* display: inline-block; */
+}
+
+.planetCardRes{
+  width: 300px;
+  height: 300px;
+  background-color: #babfe5;
+  padding: 10px;
+   /* display: inline-block; */
+}
+
+ul {
+  list-style-type: none;
+}
+
+/*ISS*/
+
+.time-date{
+  padding: 100px;;
+}
+
+.issCon{
+  width: 420px;
+  height: 350px;
+  background-color: #babfe5;
+  border-radius: 8px;
+  padding-top: 30px;
+  padding-bottom: 100px;
+  padding-top: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 150px;
+}
+
+.iss-heading {
+  margin-right: 200px;
+}
+
+.outter {
+  padding-bottom: 200px;
+  padding-top: 100px;
+  /* right: -100%; */
+}
+/*NEO*/
+
+/* .neo-con{
+  
+} */
+
+.neo-data{
+  width: 420px;
+  height: 350px;
   background-color: #babfe5;
   border-radius: 8px;
   padding-top: 30px;
   padding-bottom: 20px;
   padding-top: 25px;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  margin-top: 150px;
-  margin-left: 950px;
+  justify-content: space-between;
+  margin: 100px;
 }
 
-/* .planetCardRes{
-  width: 300px;
-  height: 300px;
-} */
+.neo-heading{
+  margin-left: 900px;
+}
 
-ul {
-  list-style-type: none;
+.neo-date {
+  margin-left: 900px;
 }

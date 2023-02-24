@@ -86,39 +86,41 @@ const Planets = () => {
   ));
   // console.log(planetSearch)
   return (
-    <div className="planets-cont">
-      <div className="planets-form">
-        <label>
-          Planet
-          <input
-            type="text"
-            value={searchPlanet}
-            onChange={(e) => setSearchPlanet(e.target.value)}
-            className="planet-searchbar"
-          />
-        </label>
-        {/* {planetResults} */}
-        <button className="planet-btn" onClick={handleSearch}>
-          Search
-        </button>
-        {!Array.isArray(planetResults) && (
-          <div>
-            <p>Name: {planetResults.name}</p>
-            <p>Mass: {planetResults.mass}</p>
-            <p>Raduis: {planetResults.radius}</p>
-            <p>Temperature: {planetResults.temperature}</p>
-            <p>Light Years Away: {planetResults.distance_light_year}</p>
-            <button
-              type="submit"
-              className="planet-btn"
-              onClick={() => handleSavePlanet(planetResults)}
-            >
-              Save
-            </button>
-          </div>
-        )}
+    <div>
+      <div className="planets-cont">
+        <div className="planets-form">
+          <label>
+            Planet
+            <input
+              type="text"
+              value={searchPlanet}
+              onChange={(e) => setSearchPlanet(e.target.value)}
+              className="planet-searchbar"
+            />
+          </label>
+          {/* {planetResults} */}
+          <button className="planet-btn" onClick={handleSearch}>
+            Search
+          </button>
+          {!Array.isArray(planetResults) && (
+            <div>
+              <p>Name: {planetResults.name}</p>
+              <p>Mass: {planetResults.mass}</p>
+              <p>Raduis: {planetResults.radius}</p>
+              <p>Temperature: {planetResults.temperature}</p>
+              <p>Light Years Away: {planetResults.distance_light_year}</p>
+              <button
+                type="submit"
+                className="planet-btn"
+                onClick={() => handleSavePlanet(planetResults)}
+              >
+                Save
+              </button>
+            </div>
+          )}
+        </div>
       </div>
-      {planetSearch}
+      <div className="planet-planet-card">{planetSearch}</div>
     </div>
   );
 };

@@ -29,6 +29,12 @@ const Header = () => {
                 <Link to="/planets">Add Planet</Link>
               </li>
               <li>
+                <Link to="/neo">See NEO</Link>
+              </li>
+              <li>
+                <Link to="/iss">See ISS</Link>
+              </li>
+              <li>
                 <button className="logout-btn" onClick={() => authCtx.login()}>
                   Login
                 </button>
@@ -41,9 +47,6 @@ const Header = () => {
               </li>
               <li>
                 <Link to="/login">Login or Sign Up</Link>
-              </li>
-              <li>
-                <Link to="/planets">Planet Info</Link>
               </li>
             </ul>
           )}

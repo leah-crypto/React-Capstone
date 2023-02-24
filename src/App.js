@@ -8,6 +8,8 @@ import Footer from "./Components/Footer";
 import Planets from "./Components/Planets";
 import Photo from './Components/Photo';
 import Landing from "./Components/Landing";
+import ISSPosition from "./Components/ISSPosition";
+import NEO from "./Components/NEO";
 
 function App() {
   const authCtx = useContext(authCon);
@@ -22,6 +24,8 @@ function App() {
           element={!authCtx.token ? <Login /> : <Navigate to="/planets" />}
         />
         <Route path="/planets" element={<Planets/>} />
+        <Route path="/neo" element={<NEO/>} />
+        <Route path="/iss" element={<ISSPosition/>} />
         {/* <Route path="/planets" element={authCtx.token ? <Planets/> : <Navigate to= '/'/>}/> */}
         {/* <Route path="/photo" element={<Photo />}/> */}
       </Routes>
