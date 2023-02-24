@@ -251,24 +251,10 @@ body {
 /*planetsCard*/
 
 .planetCardCon {
-  /* width: 320px;
-  height: 250px; */
-  
-  /* border-radius: 8px;
-  padding-top: 30px;
-  padding-bottom: 20px;
-  padding-top: 25px; */
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  gap: 10px;
-  /* flex-direction: row;
-  flex-wrap: wrap; */
-  /* align-items: center;
-  justify-content: center;
-  margin-top: 150px;
-  margin-left: 950px; */
-  /* display: inline-block; */
+  gap: 50px;
 }
 
 .planetCardRes{
@@ -331,7 +317,8 @@ ul {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  margin: 100px;
+  margin: 100px; 
+
 }
 
 .neo-heading{
@@ -340,4 +327,18 @@ ul {
 
 .neo-date {
   margin-left: 900px;
+}
+
+.neo-card-con {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 50px;
+}
+
+/*map*/
+
+.googleMap-con {
+  height: 100vh;
+  width: 100vh;
 }

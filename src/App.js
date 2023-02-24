@@ -6,7 +6,7 @@ import Login from "./Components/Login";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import Planets from "./Components/Planets";
-import Photo from './Components/Photo';
+// import Photo from './Components/Photo';
 import Landing from "./Components/Landing";
 import ISSPosition from "./Components/ISSPosition";
 import NEO from "./Components/NEO";

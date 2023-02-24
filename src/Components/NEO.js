@@ -25,11 +25,12 @@ const NEO = ({ start_date, end_date, api_key }) => {
           {Object.keys(neoData.near_earth_objects).map((date, index) => (
             <div key={index}>
               <h3 className="neo-date">Date: {date}</h3>
+              <div className="neo-card-con">
               <ul>
                 {neoData.near_earth_objects[date].map((neo) => (
                   <li key={neo.id}>
                     <div className="neo-data">
-                    <h4>{neo.name}</h4>
+                    <h4>Name: {neo.name}</h4>
                     <p>
                       Estimated Diameter:{" "}
                       {neo.estimated_diameter.kilometers.estimated_diameter_min}{" "}
@@ -53,6 +54,7 @@ const NEO = ({ start_date, end_date, api_key }) => {
                   </li>
                 ))}
               </ul>
+              </div>
             </div>
           ))}
         </div>

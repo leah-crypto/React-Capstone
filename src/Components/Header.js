@@ -12,7 +12,7 @@ const Header = () => {
       color: isActive ? "#f57145" : "",
     };
   };
-  //add post will be list instead of form
+ 
 
   return (
     <div>
@@ -34,11 +34,11 @@ const Header = () => {
               <li>
                 <Link to="/iss">See ISS</Link>
               </li>
-              <li>
+              {/* <li>
                 <button className="logout-btn" onClick={() => authCtx.login()}>
                   Login
                 </button>
-              </li>
+              </li> */}
             </ul>
           ) : (
             <ul className="main-nav">
