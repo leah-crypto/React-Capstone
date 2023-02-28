@@ -13,7 +13,7 @@ const Planets = () => {
   const JWTToken = localStorage.getItem("token");
   const userId = localStorage.getItem("userId");
 
-  useEffect(() => {
+  const getUserPlanets = () => {
     axios
       .get(`${base_URL}/userlists/${userId}`)
       .then((res) => {
@@ -23,7 +23,10 @@ const Planets = () => {
       .catch((error) => {
         console.log(error);
       });
-    handleSearch();
+  }
+  useEffect(() => {
+    getUserPlanets()
+   
   }, []);
 
   const handleSearch = () => {
@@ -74,7 +77,9 @@ const Planets = () => {
       .then((res) => {
         if (res.status === 200) {
           alert("itemSaved");
+          getUserPlanets()
         }
+
       })
       .catch((error) => {
         console.log(error);
