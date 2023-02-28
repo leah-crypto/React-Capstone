@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import GoogleMap from './GoogleMap';
+import AstroidPic from './AstroidPic';
 
 function ISSPosition() {
   const [positionData, setPositionData] = useState({});
@@ -15,6 +16,7 @@ function ISSPosition() {
   return (
     <div className='outter'>
             {/* <GoogleMap/> */}
+            <AstroidPic />
     <div className="issCon">
       <h2>ISS Position:</h2>
       <p>Latitude: {positionData.latitude}</p>
