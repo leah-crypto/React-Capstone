@@ -99,9 +99,11 @@ const Planets = () => {
             />
           </label>
           {/* {planetResults} */}
+          {/* <div className="planet-btn-con"> */}
           <button className="planet-btn" onClick={handleSearch}>
             Search
           </button>
+          {/* </div> */}
           {!Array.isArray(planetResults) && (
             <div>
               <p>Name: {planetResults.name}</p>
@@ -109,6 +111,7 @@ const Planets = () => {
               <p>Raduis: {planetResults.radius}</p>
               <p>Temperature: {planetResults.temperature}</p>
               <p>Light Years Away: {planetResults.distance_light_year}</p>
+              <div className="planet-btn-con">
               <button
                 type="submit"
                 className="planet-btn"
@@ -116,6 +119,7 @@ const Planets = () => {
               >
                 Save
               </button>
+            </div>
             </div>
           )}
         </div>

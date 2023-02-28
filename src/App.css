@@ -42,7 +42,7 @@
   margin-top: -30px;
 }
 
-#sign-in-btn{
+#sign-in-btn {
   margin-left: 200px;
   display: flex;
   flex-direction: row-reverse;
@@ -99,10 +99,10 @@
 
 .spacePhoto {
   padding: 60px;
-  width: 385px;
-  height: 371px;
+  width: 500px;
+  height: 420px;
   max-width: 50%;
-  padding-left: 200px;
+  padding-left: 300px;
 }
 
 .planets-cont {
@@ -129,7 +129,7 @@
   border-radius: 4px;
   box-sizing: border-box;
   resize: vertical;
-  /* margin-left: 60px; */
+  margin-left: 10px;
 }
 
 label {
@@ -145,15 +145,17 @@ label {
   border-radius: 4px;
   cursor: pointer;
   float: center;
-  margin-right: 10px;
-  
+  margin-left: 10px;
 }
 
-.planet-planet-card{
+.planet-btn-con {
+  margin-top: 40px;
+  margin-left: 130px;
+}
+.planet-planet-card {
   display: flex;
-  
+  /* flex-wrap: wrap; */
 }
-
 
 /*body*/
 
@@ -197,7 +199,7 @@ body {
   color: black;
   z-index: 1;
   position: absolute;
-  left: 550px;
+  left: 700px;
   padding-bottom: 50px;
   padding-top: 50px;
 }
@@ -207,7 +209,7 @@ body {
   z-index: 1;
   position: absolute;
   bottom: 40px;
-  left: 540px;
+  left: 690px;
 }
 
 /*landing*/
@@ -233,12 +235,12 @@ body {
 
 #space-photo-title {
   margin-top: 6%;
-  padding-left: 250px;
+  padding-left: 400px;
 }
 
 #space-photo-title2 {
   margin-bottom: 3%;
-  padding-left: 250px;
+  padding-left: 300px;
 }
 
 .photo-con {
@@ -257,12 +259,13 @@ body {
   gap: 50px;
 }
 
-.planetCardRes{
+.planetCardRes {
   width: 300px;
   height: 300px;
   background-color: #babfe5;
   padding: 10px;
-   /* display: inline-block; */
+  border-radius: 6px;
+  /* display: inline-block; */
 }
 
 ul {
@@ -271,11 +274,11 @@ ul {
 
 /*ISS*/
 
-.time-date{
-  padding: 100px;;
+.time-date {
+  padding: 100px;
 }
 
-.issCon{
+.issCon {
   width: 420px;
   height: 350px;
   background-color: #babfe5;
@@ -302,10 +305,13 @@ ul {
 /*NEO*/
 
 /* .neo-con{
-  
+  display: flex;
+  flex-direction: row;
+  justify-content: ;
+ 
 } */
 
-.neo-data{
+.neo-data {
   width: 420px;
   height: 350px;
   background-color: #babfe5;
@@ -317,11 +323,10 @@ ul {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  margin: 100px; 
-
+  margin: 100px;
 }
 
-.neo-heading{
+.neo-heading {
   margin-left: 900px;
 }
 
@@ -329,12 +334,15 @@ ul {
   margin-left: 900px;
 }
 
-.neo-card-con {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: 50px;
+#neo-card-con {
+  display: flex;
+  flex-wrap: wrap;
 }
+
+/* .neo-card-flex-con{
+  display: flex;
+  direction: row;
+} */
 
 /*map*/
 
